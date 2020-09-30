@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('projetowebbackend:server');
 var http = require('http');
+const mongodb = require('../database/mongodb')
 
 /**
  * Get port from environment and store in Express.
@@ -81,6 +82,7 @@ function onError(error) {
  * Event listener for HTTP server "listening" event.
  */
 
+//indica que o servidor esta ativo
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
@@ -88,5 +90,7 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 
-  console.log('servidor iniciado na porta', port);
+  mongodb.mongoose; //chama a conexao com banco
+
+  console.log('conexão com o banco iniciada');
 }
