@@ -20,6 +20,7 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/rotaTeste', rotaTesteRouter);
+app.use('/cadastro', usersRouter);
 
 
 // catch 404 and forward to error handler
