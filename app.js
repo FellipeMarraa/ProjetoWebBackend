@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const rotaTesteRouter = require('./routes/rotaTeste');
 
+
 var app = express();
 
 app.use(logger('dev'));
