@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var servicesRouter = require('./routes/services');
 const cors = require('cors');
 
 var indexRouter = require('./routes/index');
@@ -20,6 +21,7 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cadastro', usersRouter);
+app.use('/services', servicesRouter);
 
 
 // catch 404 and forward to error handler
