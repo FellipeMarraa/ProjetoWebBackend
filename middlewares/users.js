@@ -7,4 +7,11 @@ const userModel = require('../models/users');
     console.log(insercaoBanco);
 }
 
-module.exports = {cadastraUser}
+ async function verificaUser(req, res, next){
+
+    let verificacaoBanco = await userModel.get(req.body);
+
+    console.log(verificacaoBanco);
+}
+
+module.exports = {cadastraUser, verificaUser}
