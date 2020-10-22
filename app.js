@@ -22,6 +22,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cadastro', usersRouter);
 app.use('/login', usersRouter);
+app.use('/perfil-cliente', usersRouter);
 // app.use('/services', servicesRouter);
 
 
