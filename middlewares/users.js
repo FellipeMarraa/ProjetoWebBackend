@@ -29,11 +29,13 @@ async function loginUser(req, res, next) {
 
     let user = await userModel.find({login: login});
     console.log("retorno do banco", user)
-    let load = {autorization: false};
+    let load = {autorization: false, user: user.tipo};
+
 
     try{
         if(user[0].senha === senha){
             load.autorization = true;
+            load.user = user[0].tipo;
         }
     }catch(e){
         console.log("erro", e)
