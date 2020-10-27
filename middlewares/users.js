@@ -34,7 +34,7 @@ async function loginUser(req, res, next) {
                     {
                         "type": resultadoBanco.tipo,
                         "cpf": resultadoBanco.cpf,
-                        exp: Math.floor(Date.now() / 1000) + (60 * 1)
+                        exp: Math.floor(Date.now() / 1000) + (60 * 60)
                     }, 'palavraSuperSecreta');
 
                 res.locals.data = {token: token, tipo: resultadoBanco.tipo};
