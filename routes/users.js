@@ -4,6 +4,8 @@ var router = express.Router();
 const middlewareUser = require('../middlewares/users');
 const userController = require('../controllers/users');
 const multer = require("multer");
+
+
 /* GET users listing. */
 router.get('/',
     middlewareUser.verificaUser,
@@ -21,8 +23,11 @@ router.post('/login',
 );
 
 var storage = multer.diskStorage({
+
+
     destination: function (req, file, cb){
-        cb(null, '/home/fellipemarra/Dev/Faculdade/ProjetoWeb/src/assets/serverData/users'.concat(req.body.id()))
+
+        cb(null, '/home/fellipemarra/Dev/Faculdade/ProjetoWeb/src/assets/serverData/users')
     },
     filename: function(req, file, cb){
         cb(null, file.originalname)
