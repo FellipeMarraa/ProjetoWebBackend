@@ -5,28 +5,29 @@ const servicesModel = new Schema({
 
     descricao: {
         type: String,
-        required: true
+        required: false
     },
 
     categoria: {
         type: String,
-        required: true
+        required: false
     },
 
     subcategoria: [{
         descricao: {
             type: String,
-            required: true
+            required: false
         },
         imgURL: {
             type: String,
-            required: true
+            required: false
         }
     }],
     imgURL: {
         type: String,
-        required: true
+        required: false
     }
+
 
 },
     {_id: true, collection: 'services' } // nomeando a collection e dizendo que o id sera gerado automaticamente

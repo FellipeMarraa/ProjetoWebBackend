@@ -8,7 +8,7 @@ var storage = multer.diskStorage({
 
     destination: function (req, file, cb){
 
-        cb(null, '/home/fellipemarra/Dev/Faculdade/ProjetoWeb/src/assets/serverData/services')
+        cb(null, '/home/alex/Dev/Faculdade/ProjetoWeb/src/assets/serverData/services/')
     },
     filename: function(req, file, cb){
         cb(null, file.originalname)
