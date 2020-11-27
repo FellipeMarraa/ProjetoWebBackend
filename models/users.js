@@ -5,27 +5,27 @@ const usersModel = new Schema(
     {
         login : {
             type: String,
-            required: false
+            required: true
         },
 
         senha : {
             type: String,
-            required: false
+            required: true
         },
 
         nome : {
             type: String,
-            required: false
+            required: true
         },
 
         tipo : {
             type: String,
-            required: false
+            required: true
         },
 
         cpf : {
             type: String,
-            required: false
+            required: true
         }
     },
         {_id: true, collection: 'users'} //nomeando a collection e definindo que o id seja gerado automaticamente
