@@ -24,6 +24,7 @@ async function loginUser(req, res, next) {
 
     try {
         resultadoBanco = await userModel.findOne({login: req.body.login});
+        console.log(resultadoBanco);
         if (resultadoBanco) {
 
             if (resultadoBanco.senha === req.body.senha) {
