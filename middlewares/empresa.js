@@ -13,25 +13,26 @@ async function postEmpresa(req, res, next){
 }
 
 async function getEmpresa(req, res, next){
-
+    try {
     let listarEmpresa = await empresaModel.find();
     let x = []
     for(let i = 0; i < listarEmpresa.length; i++){
         const teste = await serviceModel.findOne({"id":listarEmpresa[i]._id})
         fs.readFile(teste.imgURL, {encoding: 'base64'}, (err, data) => {
-            console.log(data);
             x.push({
                 "empresa":listarEmpresa[i],
                 "imagem": data
             })
+            console.log("a");
         })
     }
+    console.log(x);
     res.status(200).send(x)
 
-    req.body = listarEmpresa;
-    next();
-
-    console.log(getEmpresa);
+    }
+    catch(error){
+        console.log(error);
+    }
 }
 
 module.exports = {postEmpresa, getEmpresa}
