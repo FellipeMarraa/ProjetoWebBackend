@@ -18,7 +18,7 @@ const servicesModel = new Schema({
         required: false
     },
 
-    idEmpresa: {
+    id: {
         type: String,
         required: false
     }

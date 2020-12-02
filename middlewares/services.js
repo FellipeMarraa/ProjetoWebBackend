@@ -9,7 +9,8 @@ async function postService(req, res, next){
     const teste = await  serviceModel.create({
         nome: req.body.nome,
         categoria: req.body.categoria,
-        imgURL: req.file.path
+        imgURL: req.file.path,
+        id: req.body.id
     })
 
     console.log(teste)
